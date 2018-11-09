@@ -9,8 +9,6 @@
  * rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-import * as util from 'util';
-
 import {Node, nodeType} from './common';
 
 export function* iterateOverAst(node: Node): Iterable<Node> {
@@ -44,6 +42,6 @@ export function* iterateOverAst(node: Node): Iterable<Node> {
       return;  // no child nodes
     default:
       const never: never = node;
-      console.error(`Got a node of unknown type: ${util.inspect(never)}`);
+      console.error(`Got a node of unknown type: ${JSON.stringify(never)}`);
   }
 }
